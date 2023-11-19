@@ -23,8 +23,6 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     print(f'Received message: {message.content}')
-
-    # Add this line to process commands
     await bot.process_commands(message)
 
 @bot.event
@@ -46,7 +44,6 @@ async def ask_question(ctx, *args):
 
 def get_answer_from_api(question):
     try:
-        # Replace 'YOUR_API_ENDPOINT' with the actual API endpoint
         response = palm.generate_text(
         model="models/text-bison-001",
         prompt=question,
