@@ -3,6 +3,7 @@ import os
 import google.generativeai as palm
 from discord.ext import commands
 from dotenv import load_dotenv
+import discord
 
 
 chat_response = ""
@@ -32,7 +33,7 @@ async def on_command_error(ctx, error):
     print(f'Command error: {error}')
 
 # Command to ask a question
-@bot.command(name='ask')
+@bot.command(name='ask' ,help="`!ask {Question}`: Ask a question\nthis command will return the answer to the current question but it doesn't remember the context of the chat(old questions).")
 async def ask_question(ctx, *args):
     # Join the arguments to form the question
     question = ' '.join(args)
@@ -62,7 +63,7 @@ def get_answer_from_api(question):
         return 'Sorry, an error occurred while fetching the answer.'
 
 
-@bot.command(name='chat')
+@bot.command(name='chat' ,help="`!chat {start chatting}`: Create a new chat with the bot that remembers the context of the chat(old questions).")
 async def start_new_chat(ctx, *args):
     # Join the arguments to form the question
     question = ' '.join(args)
@@ -88,7 +89,7 @@ def get_answer_from_chat_api(question):
         print(f'Error fetching answer from API: {e}')
         return 'Sorry, an error occurred while fetching the answer.'
 
-@bot.command(name='reply')
+@bot.command(name='reply' ,help="`!reply {your reply}`: Reply to the bot after using the `!chat` command.")
 async def continue_chating(ctx, *args):
     # Join the arguments to form the question
     question = ' '.join(args)
@@ -111,6 +112,23 @@ def repying_to_chat(my_reply):
     except Exception as e:
         print(f'Error fetching answer from API: {e}')
         return 'Sorry, an error occurred while fetching the answer.'
+
+
+# Help command
+@bot.command(name='commands', help='Show information about available commands.')
+async def help(ctx):
+    # Create an Embed message with command information
+    help_embed = discord.Embed(title='Bot Commands', color=0x00ff00)
+    help_embed.add_field(name='!ask', value='Ask a question and get an answer from the API.')
+    help_embed.add_field(name='!chat', value='Start a new chat with the bot that remembers the context of the chat(old questions/data given earlier).')
+    help_embed.add_field(name='!reply', value='Reply to the bot after using the `!chat` command.')
+    help_embed.add_field(name='!help', value='Show information about available commands.')
+
+    # Send the Embed message to the Discord channel
+    await ctx.send(embed=help_embed)
+
+
+
 
 if __name__ == "__main__":
     # Run the bot with your bot token

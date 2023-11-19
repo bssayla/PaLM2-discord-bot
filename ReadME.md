@@ -33,9 +33,14 @@ this command will return the answer to the current question but it doesn't remem
 ### Testing if the bot remembers the context of the chat
 ![Reply Command](./images/remembring_old_data.png)
 
+## Help Command
+- `!help` or `!commands`: Show the commands
+### Testing Help Command
+![Help Command](./images/help_command.png)
+
 # TODO
 - [x] Add `!chat` command to create a new chat with the bot and remember the context of the chat
 - [x] Add `!reply` command to continue the chat with the bot
-- [ ] Add `!help` command to show the commands
+- [x] Add `!help` or `!commands` command to show the commands
 
 
