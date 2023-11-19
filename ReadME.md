@@ -16,18 +16,21 @@ This is a simple Discord bot that Uses [PaLM2 API](https://developers.generative
     ```
 # Commands
 ---
-For now there is only one command
+## Ask Command
 - `!ask {Question}`: Ask a question
 this command will return the answer to the current question but it doesn't remember the context of the chat(old questions).
-## Testing Ask Command
+### Testing Ask Command
 ![Ask Command](./images/ask_command.png)
 
+## Chat Command
+
 - `!chat {start chatting}`: Create a new chat with the bot that remembers the context of the chat(old questions).
-## Testing Chat Command
+### Testing Chat Command
 ![Chat Command](./images/chat_reply_command.png)
 
+## Reply Command
 - `!reply {Answer}`: Continue the chat with the bot.
-## Testing if the bot remembers the context of the chat
+### Testing if the bot remembers the context of the chat
 ![Reply Command](./images/remembring_old_data.png)
 
 # TODO
