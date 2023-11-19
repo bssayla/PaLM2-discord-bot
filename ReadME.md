@@ -1,6 +1,6 @@
 # Introduction
 ---
-This is a simple Discord bot that Uses [PaLM2 API](https://developers.generativeai.google/) to anwser questions.
+This is a Simple Discord chatbot that can answer any question and converse with you on any topic. The bot is powered by Google's new LLM [PaLM2 API](https://ai.google/discover/palm2/), which enables it to understand natural language better and respond more accurately.
 # How to use
 ---
 1. Create a discord bot and get the token
