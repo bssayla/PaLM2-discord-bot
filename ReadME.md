@@ -42,5 +42,5 @@ this command will return the answer to the current question but it doesn't remem
 - [x] Add `!chat` command to create a new chat with the bot and remember the context of the chat
 - [x] Add `!reply` command to continue the chat with the bot
 - [x] Add `!help` or `!commands` command to show the commands
-
+- [ ] Add `!history` command to show the history of the chat
 
