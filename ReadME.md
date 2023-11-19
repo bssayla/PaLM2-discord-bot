@@ -4,7 +4,7 @@ This is a Simple Discord chatbot that can answer any question and converse with 
 # How to use
 ---
 1. Create a discord bot and get the token
-2. Get Your API Key from [Here](https://developers.generativeai.google/)
+2. Get Your API Key from [Here](https://developers.generativeai.google/products/palm)
 3. Create a file called `.env` and paste your API Key and Discord Bot Token in it
    ```bash
    API_Key={Your_API_Key}
