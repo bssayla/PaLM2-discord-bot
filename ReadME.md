@@ -1,6 +1,8 @@
 # Introduction
+---
 This is a simple Discord bot that Uses [PaLM2 API](https://developers.generativeai.google/) to anwser questions.
 # How to use
+---
 1. Create a discord bot and get the token
 2. Get Your API Key from [Here](https://developers.generativeai.google/)
 3. Create a file called `.env` and paste your API Key and Discord Bot Token in it
@@ -13,11 +15,20 @@ This is a simple Discord bot that Uses [PaLM2 API](https://developers.generative
     python3 bot.py
     ```
 # Commands
+---
 For now there is only one command
 - `!ask {Question}`: Ask a question
 this command will return the answer to the current question but it doesn't remember the context of the chat(old questions).
-## Demo
+## Testing Ask Command
 ![Ask Command](./images/ask_command.png)
+
+- `!chat {start chatting}`: Create a new chat with the bot that remembers the context of the chat(old questions).
+## Testing Chat Command
+![Chat Command](./images/chat_reply_command.png)
+
+- `!reply {Answer}`: Continue the chat with the bot.
+## Testing if the bot remembers the context of the chat
+![Reply Command](./images/remembring_old_data.png)
 
 # TODO
 - [x] Add `!chat` command to create a new chat with the bot and remember the context of the chat
