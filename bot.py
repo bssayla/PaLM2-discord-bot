@@ -128,7 +128,11 @@ async def help(ctx):
     await ctx.send(embed=help_embed)
 
 
-
+@bot.command(name='history', help='Show the history of the chat.')
+async def history(ctx):
+    for message in chat_response.messages:
+        await ctx.send("message: " + message["content"])
+    
 
 if __name__ == "__main__":
     # Run the bot with your bot token
