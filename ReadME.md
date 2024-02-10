@@ -43,4 +43,5 @@ this command will return the answer to the current question but it doesn't remem
 - [x] Add `!reply` command to continue the chat with the bot
 - [x] Add `!help` or `!commands` command to show the commands
 - [x] Add `!history` command to show the history of the chat
+- [ ] Add `!image` command to send an image and text to the bot and get the text 
 

@@ -1,6 +1,6 @@
 # bot.py
 import os
-import google.generativeai as palm
+import google.generativeai as gemini
 from discord.ext import commands
 from dotenv import load_dotenv
 import discord
@@ -11,7 +11,7 @@ chat_response = ""
 load_dotenv()
 # configure api
 API_KEY = os.environ.get("API_Key")
-palm.configure(api_key=API_KEY)
+gemini.configure(api_key=API_KEY)
 
 
 # Create a bot instance with a command prefix
@@ -47,8 +47,8 @@ async def ask_question(ctx, *args):
 
 def get_answer_from_api(question):
     try:
-        response = palm.generate_text(
-        model="models/text-bison-001",
+        response = gemini.generate_text(
+        model="models/gemini-pro",
         prompt=question,
         temperature=0.5,
         # The maximum length of the response
@@ -78,7 +78,7 @@ async def start_new_chat(ctx, *args):
 
 def get_answer_from_chat_api(question):
     try:
-        response = palm.chat(
+        response = gemini.chat(
             messages=[question],
         )
         
@@ -114,6 +114,9 @@ def repying_to_chat(my_reply):
         return 'Sorry, an error occurred while fetching the answer.'
 
 
+#image generation
+    
+
 # Help command
 @bot.command(name='commands', help='Show information about available commands.')
 async def help(ctx):
@@ -128,10 +131,12 @@ async def help(ctx):
     await ctx.send(embed=help_embed)
 
 
+
 @bot.command(name='history', help='Show the history of the chat.')
 async def history(ctx):
     for message in chat_response.messages:
         await ctx.send("message: " + message["content"])
+        await ctx.send("-"*50)
     
 
 if __name__ == "__main__":
