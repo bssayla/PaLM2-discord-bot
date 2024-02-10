@@ -44,4 +44,5 @@ this command will return the answer to the current question but it doesn't remem
 - [x] Add `!help` or `!commands` command to show the commands
 - [x] Add `!history` command to show the history of the chat
 - [ ] Add `!image` command to send an image and text to the bot and get the text 
+- [ ] re-write README.md for gemini instead of palm2
 
